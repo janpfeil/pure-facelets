@@ -3,31 +3,39 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 	<h:outputScript library="javax.faces" name="jsf.js" target="body" />
 </h:head>
 <h:body>
+	<ui:composition template="WEB-INF/layout/main.xhtml">
 
-	<h1>JSF 2.x basic ajax example</h1>
+		<ui:define name="heading">
+			<h1>JSF 2.x basic ajax example</h1>
+		</ui:define>
 
-	<h:form>
-		<h:outputLabel value="Show a message using ajax: ">
-			<h:inputText id="message" value="#{messageBean.message}" />
-		</h:outputLabel>
+		<ui:define name="content">
+			<h:form>
+				<h:outputLabel value="Show a message using ajax: ">
+					<h:inputText id="message" value="#{messageBean.message}" />
+				</h:outputLabel>
 
-		<h:commandButton value="Show Message">
-			<f:ajax execute="message" render="output" />
-		</h:commandButton>
-	</h:form>
+				<h:commandButton value="Show Message">
+					<f:ajax execute="message" render="output" />
+				</h:commandButton>
+			</h:form>
 
-	<p>
-		<h:outputText id="output" value="#{messageBean.message}" />
-	</p>
-	<h:form>
-		<p>
-			<h:commandLink action="new" value="New" />
-		</p>
-	</h:form>
+			<p>
+				<h:outputText id="output" value="#{messageBean.message}" />
+			</p>
+			<h:form>
+				<p>
+					<h:commandLink action="new" value="New" />
+				</p>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
 </h:body>
 </html>
