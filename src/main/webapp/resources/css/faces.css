@@ -30,3 +30,16 @@ span.content {
 	color: red;
 	border: 1px dotted red;
 }
+
+.decorate {
+	border: 3px dashed silver;
+}
+
+.panel {
+	border: 5px dotted green;
+}
+
+.panel .content {
+	border: 5px solid green;
+	margin: 3px;
+}

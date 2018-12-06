@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
-<h:head>
-	<title><ui:insert name="title">Default Title</ui:insert></title>
-</h:head>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<body>
-	<ui:debug />
-	<div class="heading">
-		<h3>
-			<ui:insert name="subheading" />
-		</h3>
-	</div>
-
-	<div class="content">
-		<ui:insert name="props" />
-	</div>
-</body>
-</html>
+  <div class="panel">
+    <h3>
+      <ui:insert name="title" />
+    </h3>
+    <div class="content">
+      <ui:insert name="props" />
+    </div>
+  </div>
+</ui:composition>
